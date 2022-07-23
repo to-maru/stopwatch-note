@@ -11,25 +11,27 @@ import TextBox from "./TextBox";
 const StapwatchView = () => {
     return (
         <div>
-            <h1>StopwatchView</h1>
-            <div>
-                <div>
-                    <NoteTitleBox></NoteTitleBox>
-                    <NewTakeButton></NewTakeButton>
-                    <ResetTakeButton></ResetTakeButton>
-                </div>
-                <div>
-                    <Stopwatch></Stopwatch>
-                    <StopwatchPauseButton></StopwatchPauseButton>
-                </div>
-                <IconButtonTable></IconButtonTable>
-                <div>
-                    <TextBox></TextBox>
-                    <SendButton></SendButton>
-                </div>
+            <h1 className="text-3xl font-bold underline">StopwatchView</h1>
+            <div className="flex">
+                <NoteTitleBox></NoteTitleBox>
+                <NewTakeButton></NewTakeButton>
+                <ResetTakeButton></ResetTakeButton>
             </div>
-            <div>
-                <Note></Note>
+            <div className="flex">
+                <div>
+                    <div className="flex">
+                        <Stopwatch></Stopwatch>
+                        <StopwatchPauseButton></StopwatchPauseButton>
+                    </div>
+                    <IconButtonTable></IconButtonTable>
+                    <div className="flex">
+                        <TextBox></TextBox>
+                        <SendButton></SendButton>
+                    </div>
+                </div>
+                <div>
+                    <Note></Note>
+                </div>
             </div>
         </div>
     );
