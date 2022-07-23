@@ -1,6 +1,6 @@
 const Stopwatch = () => {
     return (
-        <p>Stopwatch</p>
+        <p className="text-8xl">00:00</p>
     );
 }
 
