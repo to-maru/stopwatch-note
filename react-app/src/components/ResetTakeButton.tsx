@@ -1,6 +1,6 @@
 const ResetTakeButton = () => {
     return (
-        <p className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">ResetTakeButton</p>
+        <p className="inline-block bg-red-600 hover:bg-red-700 focus-visible:ring text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">Reset Take</p>
     );
 }
 
