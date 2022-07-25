@@ -1,6 +1,10 @@
-const Stopwatch = () => {
+type Props = {
+    children: string
+}
+
+const Stopwatch = (props: Props) => {
     return (
-        <p className="text-8xl">00:00</p>
+        <p className="text-8xl">{props.children}</p>
     );
 }
 

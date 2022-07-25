@@ -1,4 +1,4 @@
-# stopwatch-memo
+# stopwatch-note
 ## 開発環境構築（初回のみ）
 1. [Docker](https://www.docker.com/)をインストールする（既にしている場合は不要）
 2. Dockerfileがある階層に移動する

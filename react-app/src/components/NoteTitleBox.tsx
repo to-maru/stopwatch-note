@@ -1,6 +1,10 @@
-const NoteTitleBox = () => {
+type Props = {
+    children: string
+}
+
+const NoteTitleBox = (props: Props) => {
     return (
-        <p className="text-4xl bold">Take1</p>
+        <p className="text-4xl bold">{props.children}</p>
     );
 }
 

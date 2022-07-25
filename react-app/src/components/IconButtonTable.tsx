@@ -1,9 +1,12 @@
 import IconButton from "./IconButton";
 
+type Props = {
+    handleClick: (emoji: string) => void;
+}
 type value_row = Array<string>;
 type value_rows = Array<value_row>;
 
-const IconButtonTable = () => {
+const IconButtonTable = (props: Props) => {
     const value_rows: value_rows = [
         [
             '\u{30}\u{FE0F}\u{20E3}',
@@ -27,7 +30,7 @@ const IconButtonTable = () => {
                 <>
                     <div className="flex justify-center mb-1">
                         {value_row.map((value) => (
-                            <IconButton value={value}></IconButton>
+                            <IconButton value={value} handleClick={props.handleClick}></IconButton>
                         ))}
                     </div>
                 </>

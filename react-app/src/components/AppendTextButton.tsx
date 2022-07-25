@@ -1,8 +1,13 @@
 import ArrowRight from '../arrow_right.svg'
 
-const AppendTextButton = () => {
+type Props = {
+    handleClick: () => void;
+    disabled: boolean;
+}
+
+const AppendTextButton = (props: Props) => {
     return (
-        <img src={ArrowRight} alt="AppendTextButton"/>
+        <input type="image" src={ArrowRight} alt="AppendTextButton" className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-25" onClick={() => props.handleClick()} disabled={props.disabled}/>
     );
 }
 
