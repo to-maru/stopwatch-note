@@ -11,7 +11,7 @@ import StopwatchPauseButton from "./StopwatchPauseButton";
 import TextBox from "./TextBox";
 
 const StapwatchView = () => {
-    const [takeName, setTakeName] = useState('Take1');
+    const [takeName] = useState('Take1');
     const [stopwatchTimer, setStopwatchTimer] = useState(0);
     const [isStopwatchRunning, setStopwatchRunning] = useState(false);
     const [comment, setComment] = useState('');
