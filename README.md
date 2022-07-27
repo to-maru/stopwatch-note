@@ -15,3 +15,6 @@
 ## 終了方法
 1. docker-compose.ymlがある階層に移動する
 2. `docker compose down` を実行する
+
+## デプロイ方法
+`git checkout main & git subtree push --prefix build/ origin gh-pages`
