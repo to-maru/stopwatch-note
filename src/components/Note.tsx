@@ -1,6 +1,7 @@
 type Props = {
     children: string;
     handleInputNote: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+    textAreaRef: React.RefObject<HTMLTextAreaElement>;
 }
 
 const Note = (props: Props) => {
@@ -15,7 +16,7 @@ const Note = (props: Props) => {
 9:12  ⭕️ 4-3 😂
 `;
     return (
-        <textarea className="w-96 h-96 rounded-lg border-2 border-gray-300" placeholder={placeholder} value={props.children} onChange={(e) => props.handleInputNote(e)}></textarea>
+        <textarea ref={props.textAreaRef} className="w-96 h-96 rounded-lg border-2 border-gray-300" placeholder={placeholder} value={props.children} onChange={(e) => props.handleInputNote(e)}></textarea>
     );
 }
 

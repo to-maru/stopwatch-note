@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import IconButtonTable from "./IconButtonTable";
 import NewTakeButton from "./NewTakeButton";
 import Note from "./Note";
@@ -21,6 +21,7 @@ const StapwatchView = () => {
     const [timerId, setTimerId] = useState<any>();
 
     const inputRef = useRef<HTMLInputElement>(null);
+    const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
     const toStopwatchFormat = (milliSeconds: number): string => {
         const hh = String(Math.floor(milliSeconds % (60**3*1000) / (60**2*1000))).padStart(2, '0');
@@ -81,6 +82,19 @@ const StapwatchView = () => {
         resetStopwatch();
     }
 
+    const handleKeyPressOnComment = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+        if (e.key === 'Enter' && comment !== '') {
+            moveCommentToNote();
+        }
+    }
+
+    useEffect(() => {
+        const scroll = textAreaRef.current?.scrollHeight;
+        if (typeof scroll === 'number' && typeof textAreaRef.current?.scrollTop === 'number') {
+            textAreaRef.current.scrollTop = scroll + 1;
+        }  
+    }, [note]);
+
     return (
         <div className="bg-white py-6 sm:py-8 lg:py-12">
             <div className="max-w-screen-lg px-4 md:px-8 mx-auto">
@@ -106,13 +120,13 @@ const StapwatchView = () => {
                         </div>
                         <div className="flex justify-between h-8">
                             <div className="w-11/12">
-                                <TextBox inputRef={inputRef} handleInputComment={handleInputComment}>{comment}</TextBox>
+                                <TextBox inputRef={inputRef} handleKeyPress={handleKeyPressOnComment} handleInputComment={handleInputComment}>{comment}</TextBox>
                             </div>
                             <AppendTextButton handleClick={moveCommentToNote} disabled={comment.length < 1}></AppendTextButton>
                         </div>
                     </div>
                     <div className="ml-16">
-                        <Note handleInputNote={handleInputNote}>{note}</Note>
+                        <Note textAreaRef={textAreaRef} handleInputNote={handleInputNote}>{note}</Note>
                     </div>
                 </div>
             </div>
