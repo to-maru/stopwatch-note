@@ -19,6 +19,6 @@ https://to-maru.github.io/stopwatch-note/
 2. `docker compose down` を実行する
 
 ## デプロイ方法
-1. `git checkout main`
-2. `docker-compose run --rm node sh -c 'yarn build'`
-3. `git subtree push --prefix build/ origin gh-pages`
+プッシュする前に右のコマンドを叩きビルドを行う `docker-compose run --rm node sh -c 'yarn build'`
+
+プッシュした後に右のコマンドを叩く `git subtree push --prefix build/ origin gh-pages`
